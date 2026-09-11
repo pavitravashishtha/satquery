@@ -1,0 +1,14 @@
+{
+  "model_name": "qwen2.5-vl-3b-general",
+  "benchmark": "cartosat_risat_proxy",
+  "task": "vqa",
+  "metric": "accuracy (relaxed)",
+  "score": 0.0,
+  "n_samples": 5,
+  "majority_baseline": 0.2,
+  "majority_class": "river and floodplain wetland",
+  "baseline_gap": -0.2,
+  "domain_collapse_detected": false,
+  "dominant_prediction": "the dominant geographic feature in this scene is a large body of water, likely a river or lake, that runs through the center of the image. the land cover around the water is predominantly urbanized, with a dense network of roads and buildings. there are also patches of greenery, particularly along the edges of the water where it meets the land.",
+  "dominant_prediction_ratio": 0.2
+}

@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+miniconda3/
+
+# Logs & temporary run files
+*.log
+train.log
+
+# Large Base Model Weights (Hugging Face base checkpoints > 100MB)
+models/**/*.safetensors
+models/**/*.bin
+models/**/.cache/
+
+# Checkpoint intermediate optimizer states (keep only final adapter & model weights)
+checkpoints/**/checkpoint-*/
+checkpoints/**/optimizer.pt
+checkpoints/**/training_args.bin
+
+# Massive Training & Benchmark Datasets (several GBs)
+data/SECOND/
+data/ben-ge-8k/
+data/CDVQA/
+data/cache_imagery/*
+!data/cache_imagery/.gitkeep
+
+# Temporary backups, zip dumps, and unreferenced frame splits
+satquery-ai-*/
+ui/ezgif-*/
+ui/uploads/*
+!ui/uploads/.gitkeep
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

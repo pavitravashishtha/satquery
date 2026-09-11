@@ -1,0 +1,51 @@
+{
+  "model_name": "geochat-7b",
+  "benchmark": "cartosat_risat_proxy",
+  "predictions": [
+    {
+      "sample_id": "probe_01_assam",
+      "task": "vqa",
+      "answer": "Based on the information provided, it can be inferred that the dominant geographic feature in this scene is a large bridge crossing over two rivers or water bodies. The presence of multiple bridges suggests a densely populated area with a well-developed infrastructure for transportation and connectivity. As for the land cover, it appears to be a mix of urban areas, possibly with green spaces like parks or gardens interspersed among the buildings.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "probe_02_chennai",
+      "task": "vqa",
+      "answer": "In this scene, the dominant geographic feature is the presence of two bridges spanning over a body of water, with one bridge located at the bottom right corner and another at the top left corner. The land covers in the image are predominantly green fields and buildings, which can be seen surrounding these bridges and extending from the shoreline towards the center of the image.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "probe_03_delhi",
+      "task": "vqa",
+      "answer": "Based on the information provided, it can be inferred that the dominant geographic feature in this scene is likely a golf course or a sports field, as there are two of them present in close proximity at the bottom right corner of the image. Additionally, the presence of trees suggests a mix of natural and man-made elements within the area.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "probe_04_munnar",
+      "task": "vqa",
+      "answer": "In the given image, it can be observed that the dominant geographic feature is the presence of two bridges spanning across a river or stream. One bridge appears to be located at the center, while another is positioned further away on either side. The surrounding landscape seems to consist mainly of water bodies, with some trees and possibly other structures visible in the background. Based on these observations, it can be inferred that the scene depicts a picturesque riverside setting, likely with a mix of natural beauty and human-made infrastructure.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "probe_05_kochi",
+      "task": "vqa",
+      "answer": "In this scene, the dominant geographic feature is the presence of two bridges spanning over waterways at different locations, with one bridge located at the bottom right and another at the center. This suggests that there may be a river or body of water flowing through the area, possibly connecting these two locations. As for the land cover, it appears to be predominantly composed of grassy fields and trees, indicating a more rural or suburban setting rather than an urban environment.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": null
+    }
+  ]
+}

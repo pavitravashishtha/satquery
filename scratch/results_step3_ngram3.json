@@ -1,0 +1,97 @@
+{
+  "sweep_10": [
+    {
+      "image": "data/SECOND/im2/00013.png",
+      "answer": "In this satellite",
+      "confidence": 1.0,
+      "tokens": 3,
+      "building_count": 0
+    },
+    {
+      "image": "data/SECOND/im2/00015.png",
+      "answer": "In this satellite",
+      "confidence": 0.9740973114967346,
+      "tokens": 3,
+      "building_count": 0
+    },
+    {
+      "image": "data/SECOND/im2/00016.png",
+      "answer": "In this satellite",
+      "confidence": 0.9735158234834671,
+      "tokens": 3,
+      "building_count": 0
+    },
+    {
+      "image": "data/SECOND/im2/00017.png",
+      "answer": "In this satellite",
+      "confidence": 1.0,
+      "tokens": 3,
+      "building_count": 0
+    },
+    {
+      "image": "data/SECOND/im2/00018.png",
+      "answer": "In this satellite",
+      "confidence": 0.9746676683425903,
+      "tokens": 3,
+      "building_count": 0
+    },
+    {
+      "image": "data/SECOND/im2/00020.png",
+      "answer": "In this satellite",
+      "confidence": 1.0,
+      "tokens": 3,
+      "building_count": 0
+    },
+    {
+      "image": "data/SECOND/im2/00021.png",
+      "answer": "In this satellite",
+      "confidence": 0.9746675938367844,
+      "tokens": 3,
+      "building_count": 0
+    },
+    {
+      "image": "data/SECOND/im2/00025.png",
+      "answer": "In this satellite",
+      "confidence": 0.9749205559492111,
+      "tokens": 3,
+      "building_count": 0
+    },
+    {
+      "image": "data/SECOND/im2/00026.png",
+      "answer": "In this satellite",
+      "confidence": 1.0,
+      "tokens": 3,
+      "building_count": 0
+    },
+    {
+      "image": "data/SECOND/im2/00028.png",
+      "answer": "In this satellite",
+      "confidence": 1.0,
+      "tokens": 3,
+      "building_count": 0
+    }
+  ],
+  "runs_00018": [
+    {
+      "image": "data/SECOND/im2/00018.png",
+      "answer": "In this satellite",
+      "confidence": 0.9746676683425903,
+      "tokens": 3,
+      "building_count": 0
+    },
+    {
+      "image": "data/SECOND/im2/00018.png",
+      "answer": "In this satellite",
+      "confidence": 0.9746676683425903,
+      "tokens": 3,
+      "building_count": 0
+    },
+    {
+      "image": "data/SECOND/im2/00018.png",
+      "answer": "In this satellite",
+      "confidence": 0.9746676683425903,
+      "tokens": 3,
+      "building_count": 0
+    }
+  ]
+}

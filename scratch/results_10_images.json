@@ -1,0 +1,62 @@
+[
+  {
+    "index": 1,
+    "image_path": "data/SECOND/im2/00013.png",
+    "decoded_output": "In this satellite image, there are two buildings, some trees, a road, and a trailer. The buildings are located at the bottom right and top right of the image, while the trees are scattered throughout the scene. The road is present in the center of the image, and the trailer is located at the bottom of the image.",
+    "confidence": 0.878
+  },
+  {
+    "index": 2,
+    "image_path": "data/SECOND/im2/00015.png",
+    "decoded_output": "In this satellite image, there are various objects and features visible, including buildings, houses, trees, a road, a basketball court, and a tennis court.",
+    "confidence": 0.8839
+  },
+  {
+    "index": 3,
+    "image_path": "data/SECOND/im2/00016.png",
+    "decoded_output": "In this satellite image, there are various objects and features visible, including buildings, houses, trees, roads, a large intersection, and a small vehicle. The image also shows a large intersection at the bottom left, a building at the center, a road at the right, a building at the top left, a building at the top right, and some trees at the top right.",
+    "confidence": 0.8699
+  },
+  {
+    "index": 4,
+    "image_path": "data/SECOND/im2/00017.png",
+    "decoded_output": "In this satellite image, there are various objects and features visible, including buildings, trees, a road, small vehicles, and a large swimming pool. Additionally, there is a building located at the center of the image, surrounded by trees.",
+    "confidence": 0.8639
+  },
+  {
+    "index": 5,
+    "image_path": "data/SECOND/im2/00018.png",
+    "decoded_output": "In this satellite image, there are several objects and features visible, including a football field, basketball courts, tennis courts, buildings, houses, trees, a road, a bridge, a building, a ground track field, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a building, a",
+    "confidence": 0.976
+  },
+  {
+    "index": 6,
+    "image_path": "data/SECOND/im2/00020.png",
+    "decoded_output": "In this satellite image, there are two large bridges, one at the center and another at the top right, and one large intersection at the bottom right. There is also a small bridge at the top right and a large airport at the bottom left.",
+    "confidence": 0.7861
+  },
+  {
+    "index": 7,
+    "image_path": "data/SECOND/im2/00021.png",
+    "decoded_output": "In this satellite image, there are two basketball courts, three buildings, some trees, a road, and three small vehicles. The basketball courts and buildings are located close to each other at the bottom right of the image. The road is present at the top of the image.",
+    "confidence": 0.8464
+  },
+  {
+    "index": 8,
+    "image_path": "data/SECOND/im2/00025.png",
+    "decoded_output": "In this satellite image, there are two bridges, one building, three groundtrackfields, one small groundtrackfield, four basketball courts, one building, one building, and some trees close to each other at the top left. Additionally, there is a building located at the bottom left of the image.",
+    "confidence": 0.7773
+  },
+  {
+    "index": 9,
+    "image_path": "data/SECOND/im2/00026.png",
+    "decoded_output": "In this satellite image, there are two buildings, two golf fields, some trees, and three roads visible.",
+    "confidence": 0.8249
+  },
+  {
+    "index": 10,
+    "image_path": "data/SECOND/im2/00028.png",
+    "decoded_output": "In this satellite image, there are two buildings, one building with a basketball court, two tennis courts, some trees, a road, and multiple vehicles. Additionally, there is a small vehicle parked at the bottom left of the image.",
+    "confidence": 0.7563
+  }
+]

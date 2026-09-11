@@ -1,0 +1,14 @@
+{
+  "model_name": "fusion_dual_cnn",
+  "benchmark": "ben_ge_8k",
+  "task": "vqa",
+  "metric": "accuracy (relaxed)",
+  "score": 0.15,
+  "n_samples": 40,
+  "majority_baseline": 0.1,
+  "majority_class": "coniferous forest, mixed forest",
+  "baseline_gap": 0.05,
+  "domain_collapse_detected": false,
+  "dominant_prediction": "coniferous forest, mixed forest",
+  "dominant_prediction_ratio": 0.45
+}

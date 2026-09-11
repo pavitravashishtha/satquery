@@ -1,0 +1,8 @@
+{
+  "model_name": "geochat-7b",
+  "benchmark": "cdvqa",
+  "task": "vqa",
+  "metric": "accuracy (relaxed)",
+  "score": 0.0,
+  "n_samples": 20
+}

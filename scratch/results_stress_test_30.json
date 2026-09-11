@@ -1,0 +1,302 @@
+[
+  {
+    "run": 1,
+    "token_count": 42,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.813,
+    "decoded_output": "In this satellite image, there is one bridge, two buildings, some trees, four basketball courts, six tennis courts, three football fields, five roads, and various other structures and details present in the scene."
+  },
+  {
+    "run": 2,
+    "token_count": 76,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8725,
+    "decoded_output": "In the given image, there is one bridge, two buildings close to each other at top left, four basketball courts close to each other at top left, three buildings close to each other at bottom right, two buildings close to each other at center, one building at the bottom, some trees at the bottom right, and one large groundtrackfield at the top of the image."
+  },
+  {
+    "run": 3,
+    "token_count": 51,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8204,
+    "decoded_output": "In this satellite image, there is one building close to each other at bottom left, two buildings close to each other at top right, four basketball courts, three tennis courts, one ground track field, some trees, a road, and a small bridge."
+  },
+  {
+    "run": 4,
+    "token_count": 32,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8225,
+    "decoded_output": "In this satellite image, there is one bridge, two buildings, four houses, some trees, three basketball courts, five football fields, and six tennis courts."
+  },
+  {
+    "run": 5,
+    "token_count": 53,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8634,
+    "decoded_output": "In the satellite image, there is one building close to each other at the top left corner of the image. Additionally, there is another building located at the bottom right corner of the image. There is also a football field present on the top part of the image."
+  },
+  {
+    "run": 6,
+    "token_count": 24,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.79,
+    "decoded_output": "In this satellite image, there is one bridge, two buildings, three basketball courts, some trees, and two roads."
+  },
+  {
+    "run": 7,
+    "token_count": 62,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8488,
+    "decoded_output": "In this satellite image, there is one bridge, two buildings close to each other at top left, three basketball courts, four tennis courts, some trees, two buildings close to each other at bottom right, two buildings close to each other at center, and some buildings and houses at the bottom of the image."
+  },
+  {
+    "run": 8,
+    "token_count": 72,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8334,
+    "decoded_output": "In this satellite image, there is one building located at the bottom right of the image. Additionally, there are two buildings close to each other at the top left corner of the image. There are also three basketball courts present in the scene. One building has 10 tennis courts around it, which suggests that it may be a sports complex or stadium."
+  },
+  {
+    "run": 9,
+    "token_count": 54,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8166,
+    "decoded_output": "In the satellite image, there is one building located at the bottom left, two buildings close to each other at the center, three basketball courts, six tennis courts, some trees, and a road. There is also a single bridge present at the top of the image."
+  },
+  {
+    "run": 10,
+    "token_count": 29,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8051,
+    "decoded_output": "In the satellite image, there is one bridge, two buildings, three basketball courts, some trees, a road, and multiple small vehicles present."
+  },
+  {
+    "run": 11,
+    "token_count": 35,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8012,
+    "decoded_output": "In this satellite image, there are two bridges, three buildings, one ground track field, four tennis courts, some trees, five basketball courts, and two football fields."
+  },
+  {
+    "run": 12,
+    "token_count": 61,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.837,
+    "decoded_output": "In this satellite image, there is one bridge, two buildings, three basketball courts, four football fields, some trees at the top left, right side of the image, bottom right corner, and close to each other at center. Additionally, there are no ships or harbors present in the image."
+  },
+  {
+    "run": 13,
+    "token_count": 70,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8424,
+    "decoded_output": "In this satellite image, there is one building at the bottom left, two buildings at the right side, four basketball courts close together at top left, three tennis courts close together at top left, one ground track field at the top, one bridge at the left, two buildings at the center, and some trees at the right side of the image."
+  },
+  {
+    "run": 14,
+    "token_count": 44,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8352,
+    "decoded_output": "In the given image, there is one bridge, three buildings, two roads, four basketball courts, five tennis courts, some trees, and a small vehicle parked at the building on the right side of the image."
+  },
+  {
+    "run": 15,
+    "token_count": 43,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8255,
+    "decoded_output": "In this satellite image, there are two bridges, one building, three buildings close together at top left, four basketball courts, five tennis courts, some trees, and multiple buildings and houses located throughout the scene."
+  },
+  {
+    "run": 16,
+    "token_count": 35,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8247,
+    "decoded_output": "In this satellite image, there is one bridge, two buildings, six houses, four roads, three basketball courts, five tennis courts, some trees, and multiple small vehicles."
+  },
+  {
+    "run": 17,
+    "token_count": 63,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8732,
+    "decoded_output": "In this satellite image, there is one bridge at the bottom left, two buildings close to each other at the top right, three basketball courts located around the center of the image, and some trees scattered throughout the scene. Additionally, there are four tennis courts arranged in a square pattern at the top of the image."
+  },
+  {
+    "run": 18,
+    "token_count": 43,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.819,
+    "decoded_output": "In this satellite image, there are three basketball courts, two buildings, four bridges, some trees, one road, and six vehicles. Additionally, there is a building at the top left corner of the image."
+  },
+  {
+    "run": 19,
+    "token_count": 75,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8287,
+    "decoded_output": "In this satellite image, there is one bridge, two buildings close to each other at top left, three basketball courts, five tennis courts, six buildings close to each other at right, one building with trees at bottom right, some buildings close to each other at center, four buildings close to each other at bottom left, and two buildings close to each other at top left."
+  },
+  {
+    "run": 20,
+    "token_count": 36,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8121,
+    "decoded_output": "In this satellite image, there is one bridge, two buildings, three basketball courts, five tennis courts, some trees, and two roads present at the bottom left of the scene."
+  },
+  {
+    "run": 21,
+    "token_count": 71,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8609,
+    "decoded_output": "In this satellite image, there is one basketball court located at the top left corner of the image, three buildings close to each other at the bottom right corner, two bridges crossing over each other at the center of the image, four roads passing through the scene, some trees present on both sides of the image, and various buildings scattered throughout the image."
+  },
+  {
+    "run": 22,
+    "token_count": 78,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8472,
+    "decoded_output": "In this satellite image, there is one bridge at the left side of the image, two buildings close to each other at the bottom right, three basketball courts located near the center, two tennis courts located close to each other at the top, and some trees at the bottom right corner. Additionally, there is no mention of any football field or building at the top left corner of the image."
+  },
+  {
+    "run": 23,
+    "token_count": 29,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8342,
+    "decoded_output": "In this satellite image, there is one bridge, three buildings, two roads, four tennis courts, some trees, and six small vehicles present."
+  },
+  {
+    "run": 24,
+    "token_count": 33,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8537,
+    "decoded_output": "In this satellite image, there is one basketball court, two bridges, four buildings, three roads, six tennis courts, and some trees at the bottom right."
+  },
+  {
+    "run": 25,
+    "token_count": 64,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8804,
+    "decoded_output": "In this satellite image, there is one bridge, two buildings close to each other at top left, three basketball courts close to each other at center, four tennis courts close to each other at center, five buildings close to each other at right side of the image, and some trees present on both sides of the image."
+  },
+  {
+    "run": 26,
+    "token_count": 29,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8297,
+    "decoded_output": "In this satellite image, there is one building, two bridges, four roads, three basketball courts, and some trees at the bottom right."
+  },
+  {
+    "run": 27,
+    "token_count": 81,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8538,
+    "decoded_output": "In the given image, there is one bridge at the left side of the frame, two buildings close to each other at bottom right, three buildings close to each other at top left, four basketball courts located around the center of the image, one building at the bottom left, one ground track field at the top, some trees at the bottom right, and no mention of any tennis court or football field."
+  },
+  {
+    "run": 28,
+    "token_count": 30,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8041,
+    "decoded_output": "In this satellite image, there is one bridge, two buildings, some trees, three basketball courts, six tennis courts, and multiple other objects present."
+  },
+  {
+    "run": 29,
+    "token_count": 42,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8554,
+    "decoded_output": "In this satellite image, there are several buildings, houses, trees, basketball courts, football fields, roads, bridges, a tennis court, and a building located at the top left corner of the image."
+  },
+  {
+    "run": 30,
+    "token_count": 68,
+    "has_loop": false,
+    "is_degenerate": false,
+    "repeating_phrase": null,
+    "repeat_count": 0,
+    "confidence": 0.8434,
+    "decoded_output": "In the given image, there is one building at the top left corner, two buildings close to each other at the bottom right corner, three basketball courts located near the center of the image, and four tennis courts arranged in a line on the left side of the image. Additionally, there is a road passing through the middle of the scene."
+  }
+]

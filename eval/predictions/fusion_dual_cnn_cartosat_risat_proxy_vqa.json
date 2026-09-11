@@ -1,0 +1,51 @@
+{
+  "model_name": "fusion_dual_cnn",
+  "benchmark": "cartosat_risat_proxy",
+  "predictions": [
+    {
+      "sample_id": "probe_01_assam",
+      "task": "vqa",
+      "answer": "Combining optical and SAR data, the following are present: Inland wetlands (confidence 84.1%), Inland waters (confidence 90.6%).",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "probe_02_chennai",
+      "task": "vqa",
+      "answer": "Combining optical and SAR data, the following are present: Inland waters (confidence 95.6%).",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "probe_03_delhi",
+      "task": "vqa",
+      "answer": "Combining optical and SAR data, the following are present: Inland waters (confidence 99.3%).",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "probe_04_munnar",
+      "task": "vqa",
+      "answer": "Combining optical and SAR data, the following are present: Inland waters (confidence 99.7%).",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "probe_05_kochi",
+      "task": "vqa",
+      "answer": "Combining optical and SAR data, the following are present: Inland waters (confidence 99.3%).",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    }
+  ]
+}

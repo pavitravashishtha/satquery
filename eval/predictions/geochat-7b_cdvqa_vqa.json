@@ -1,0 +1,186 @@
+{
+  "model_name": "geochat-7b",
+  "benchmark": "cdvqa",
+  "predictions": [
+    {
+      "sample_id": "0",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 4.5934
+    },
+    {
+      "sample_id": "1",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 4.3358
+    },
+    {
+      "sample_id": "2",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.7474
+    },
+    {
+      "sample_id": "3",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.1799
+    },
+    {
+      "sample_id": "4",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.4514
+    },
+    {
+      "sample_id": "5",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 4.0263
+    },
+    {
+      "sample_id": "6",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.4139
+    },
+    {
+      "sample_id": "7",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.3195
+    },
+    {
+      "sample_id": "8",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 4.1553
+    },
+    {
+      "sample_id": "9",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.6769
+    },
+    {
+      "sample_id": "10",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.2614
+    },
+    {
+      "sample_id": "11",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.6634
+    },
+    {
+      "sample_id": "12",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.7231
+    },
+    {
+      "sample_id": "13",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.202
+    },
+    {
+      "sample_id": "14",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.3024
+    },
+    {
+      "sample_id": "15",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 4.081
+    },
+    {
+      "sample_id": "16",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.6155
+    },
+    {
+      "sample_id": "17",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.2181
+    },
+    {
+      "sample_id": "18",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 3.7931
+    },
+    {
+      "sample_id": "19",
+      "task": "vqa",
+      "answer": "nobody is perfect, and we all make mistakes. nobody is perfect, and we all make mistakes.\n\n1. 我的意思是：人人都有缺点，我们都会犯错误。\n2. 我的意思是：人人都有缺点，我们都会犯错误。\n3. 我的意思是：人人都有缺点，我们都会犯错误.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "geochat-7b",
+      "runtime_sec": 4.0168
+    }
+  ]
+}

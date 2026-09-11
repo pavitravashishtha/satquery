@@ -1,0 +1,366 @@
+{
+  "model_name": "fusion_dual_cnn",
+  "benchmark": "ben_ge_8k",
+  "predictions": [
+    {
+      "sample_id": "S2B_MSIL2A_20170808T094029_73_64",
+      "task": "vqa",
+      "answer": "Arable land, Pastures",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20170924T93020_26_36",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20170930T095019_72_49",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20180228T101021_84_89",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20170924T93022_21_14",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20180515T112110_49_74",
+      "task": "vqa",
+      "answer": "no significant land-cover features detected",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20171002T112111_41_11",
+      "task": "vqa",
+      "answer": "Arable land, Complex cultivation patterns",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20180527T093041_55_38",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20170905T095031_51_59",
+      "task": "vqa",
+      "answer": "Arable land, Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20171121T112351_63_66",
+      "task": "vqa",
+      "answer": "Agro-forestry areas, Broad-leaved forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20180204T094159_75_77",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20171219T095409_15_40",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20180204T94161_36_5",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20180526T100031_69_26",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20180506T100031_16_28",
+      "task": "vqa",
+      "answer": "Arable land, Land principally occupied by agriculture, with significant areas of natural vegetation, Pastures",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20171101T094131_52_31",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20180506T100031_1_62",
+      "task": "vqa",
+      "answer": "Arable land, Complex cultivation patterns, Urban fabric",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20171121T112351_53_1",
+      "task": "vqa",
+      "answer": "Broad-leaved forest, Moors, heathland and sclerophyllous vegetation",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20170717T113321_75_62",
+      "task": "vqa",
+      "answer": "Industrial or commercial units, Urban fabric",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20180525T094029_52_56",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20170924T93020_87_8",
+      "task": "vqa",
+      "answer": "Coniferous forest, Inland waters, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20170825T093029_24_23",
+      "task": "vqa",
+      "answer": "Arable land, Urban fabric",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20180421T100029_27_17",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20170924T93021_55_41",
+      "task": "vqa",
+      "answer": "Coniferous forest, Inland waters, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20171208T093351_88_16",
+      "task": "vqa",
+      "answer": "Broad-leaved forest, Land principally occupied by agriculture, with significant areas of natural vegetation",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20180515T094029_87_89",
+      "task": "vqa",
+      "answer": "Arable land, Complex cultivation patterns, Land principally occupied by agriculture, with significant areas of natural vegetation",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20171121T112351_0_42",
+      "task": "vqa",
+      "answer": "Complex cultivation patterns, Land principally occupied by agriculture, with significant areas of natural vegetation",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20171112T114339_33_62",
+      "task": "vqa",
+      "answer": "Pastures",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20170905T095031_14_16",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20171002T094031_64_46",
+      "task": "vqa",
+      "answer": "Arable land",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20180515T094029_4_12",
+      "task": "vqa",
+      "answer": "Coniferous forest, Inland waters, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20171208T093351_82_25",
+      "task": "vqa",
+      "answer": "Broad-leaved forest, Land principally occupied by agriculture, with significant areas of natural vegetation",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20180204T94160_59_17",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20170914T093029_0_15",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20170927T94020_72_77",
+      "task": "vqa",
+      "answer": "Arable land, Mixed forest, Pastures",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20170914T93030_59_63",
+      "task": "vqa",
+      "answer": "Broad-leaved forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20170808T094029_25_42",
+      "task": "vqa",
+      "answer": "Broad-leaved forest, Land principally occupied by agriculture, with significant areas of natural vegetation, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20180417T102019_66_84",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2A_MSIL2A_20171101T094131_68_66",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "S2B_MSIL2A_20170924T93021_43_10",
+      "task": "vqa",
+      "answer": "Coniferous forest, Mixed forest",
+      "box": null,
+      "mask_path": null,
+      "model_name": "fusion_dual_cnn",
+      "runtime_sec": null
+    }
+  ]
+}

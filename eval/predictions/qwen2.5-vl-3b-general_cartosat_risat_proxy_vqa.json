@@ -1,0 +1,51 @@
+{
+  "model_name": "qwen2.5-vl-3b-general",
+  "benchmark": "cartosat_risat_proxy",
+  "predictions": [
+    {
+      "sample_id": "probe_01_assam",
+      "task": "vqa",
+      "answer": "The dominant geographic feature in this scene is a large body of water, likely a river or lake, that runs through the center of the image. The land cover around the water is predominantly urbanized, with a dense network of roads and buildings. There are also patches of greenery, particularly along the edges of the water where it meets the land.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "qwen2.5-vl-3b-general",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "probe_02_chennai",
+      "task": "vqa",
+      "answer": "The dominant geographic feature in this scene is the urban area, which covers most of the image. The land cover is primarily composed of buildings, roads, and other infrastructure typical of an urban environment. There are also some green areas, such as parks or open spaces, but they are less prominent compared to the built-up areas.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "qwen2.5-vl-3b-general",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "probe_03_delhi",
+      "task": "vqa",
+      "answer": "The dominant geographic feature and land cover in this scene is urban development, with numerous buildings and roads forming a dense network of infrastructure. The area is surrounded by green spaces, including parks and forests, which provide a contrast to the urban landscape.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "qwen2.5-vl-3b-general",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "probe_04_munnar",
+      "task": "vqa",
+      "answer": "The dominant geographic feature in this scene is the forested area, covering most of the landscape. The land cover is primarily forest, with patches of open areas interspersed throughout.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "qwen2.5-vl-3b-general",
+      "runtime_sec": null
+    },
+    {
+      "sample_id": "probe_05_kochi",
+      "task": "vqa",
+      "answer": "The dominant geographic feature in this scene is water, specifically a large body of water that appears to be a river or estuary. The land cover consists mainly of urban and suburban areas with patches of greenery, indicating residential and commercial development along the waterfront.",
+      "box": null,
+      "mask_path": null,
+      "model_name": "qwen2.5-vl-3b-general",
+      "runtime_sec": null
+    }
+  ]
+}

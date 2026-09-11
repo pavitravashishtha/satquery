@@ -1,0 +1,107 @@
+{
+  "sweep_10": [
+    {
+      "index": 1,
+      "image_path": "data/SECOND/im2/00013.png",
+      "decoded_output": "In this satellite image, there is one building at the bottom right, three buildings close to each other at the top left, two buildings close to each other at the center, two buildings close to each other at the bottom right, trees at the top right, some trees at the top left, and no objects or features mentioned for the rest of the scene.",
+      "tokens": 72,
+      "building_count": 4,
+      "confidence": 0.8735
+    },
+    {
+      "index": 2,
+      "image_path": "data/SECOND/im2/00015.png",
+      "decoded_output": "In this satellite image, there is one building at the bottom left corner, two buildings close to each other at the center, three basketball courts close to each other at the right side of the image, some trees present throughout the scene, and various buildings located around the image.",
+      "tokens": 55,
+      "building_count": 3,
+      "confidence": 0.8586
+    },
+    {
+      "index": 3,
+      "image_path": "data/SECOND/im2/00016.png",
+      "decoded_output": "In this satellite image, there is one basketball court located at the bottom right of the image. Additionally, there are multiple buildings present throughout the scene with some trees scattered around them. There is also a road that runs through the center of the image, connecting different parts of the scene.",
+      "tokens": 57,
+      "building_count": 1,
+      "confidence": 0.8643
+    },
+    {
+      "index": 4,
+      "image_path": "data/SECOND/im2/00017.png",
+      "decoded_output": "In this satellite image, there is one building located at the bottom left corner of the image. There is also another building close to it at the same location. Additionally, there is a road present at the top right corner of the image.",
+      "tokens": 48,
+      "building_count": 2,
+      "confidence": 0.8645
+    },
+    {
+      "index": 5,
+      "image_path": "data/SECOND/im2/00018.png",
+      "decoded_output": "In this satellite image, there is one building, three bridges, two roads, some trees, six buildings close to each other at top left, four buildings close to each other at bottom right, and three basketball courts located at different positions.",
+      "tokens": 49,
+      "building_count": 3,
+      "confidence": 0.8165
+    },
+    {
+      "index": 6,
+      "image_path": "data/SECOND/im2/00020.png",
+      "decoded_output": "In this satellite image, there is one large airport located at the center of the image.",
+      "tokens": 19,
+      "building_count": 0,
+      "confidence": 0.8713
+    },
+    {
+      "index": 7,
+      "image_path": "data/SECOND/im2/00021.png",
+      "decoded_output": "In this satellite image, there is one basketball court, three buildings, some trees, two roads, and various small vehicles.",
+      "tokens": 25,
+      "building_count": 1,
+      "confidence": 0.8199
+    },
+    {
+      "index": 8,
+      "image_path": "data/SECOND/im2/00025.png",
+      "decoded_output": "In this satellite image, there are two bridges, one building, three groundtrackfields, four intersections, some trees, two buildings close to each other at top right, five basketball courts, one tennis court, and two small basketball courts located close to each other at bottom left. Additionally, there is a road passing through the scene with multiple intersections.",
+      "tokens": 73,
+      "building_count": 2,
+      "confidence": 0.795
+    },
+    {
+      "index": 9,
+      "image_path": "data/SECOND/im2/00026.png",
+      "decoded_output": "In this satellite image, there are two buildings, one building close to another at bottom left, three basketball courts, some trees, tennis court, road, roundabout, and two buildings located at the right side of the image.",
+      "tokens": 46,
+      "building_count": 3,
+      "confidence": 0.7969
+    },
+    {
+      "index": 10,
+      "image_path": "data/SECOND/im2/00028.png",
+      "decoded_output": "In this satellite image, there is one building, two buildings close to each other at bottom left, three buildings close to each other at center, four buildings close to each other at top right, some trees at the bottom right, one road at the bottom right, and one roundabout at the left.",
+      "tokens": 61,
+      "building_count": 4,
+      "confidence": 0.8398
+    }
+  ],
+  "runs_00018": [
+    {
+      "run": 1,
+      "decoded_output": "In this satellite image, there are three bridges, two buildings, one basketball court, four roads, some trees, and five small vehicles present.",
+      "tokens": 30,
+      "building_count": 1,
+      "confidence": 0.8057
+    },
+    {
+      "run": 2,
+      "decoded_output": "In this satellite image, there is one basketball court, two buildings, three bridges, some trees, and a road. Additionally, there are four small vehicles present in the scene.",
+      "tokens": 37,
+      "building_count": 1,
+      "confidence": 0.8402
+    },
+    {
+      "run": 3,
+      "decoded_output": "In this satellite image, there are two bridges, three buildings, five houses, four roads, one football field, six basketball courts, and some trees.",
+      "tokens": 32,
+      "building_count": 1,
+      "confidence": 0.8114
+    }
+  ]
+}

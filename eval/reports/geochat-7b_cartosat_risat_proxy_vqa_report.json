@@ -1,0 +1,14 @@
+{
+  "model_name": "geochat-7b",
+  "benchmark": "cartosat_risat_proxy",
+  "task": "vqa",
+  "metric": "accuracy (relaxed)",
+  "score": 0.0,
+  "n_samples": 5,
+  "majority_baseline": 0.2,
+  "majority_class": "river and floodplain wetland",
+  "baseline_gap": -0.2,
+  "domain_collapse_detected": false,
+  "dominant_prediction": "based on the information provided, it can be inferred that the dominant geographic feature in this scene is a large bridge crossing over two rivers or water bodies. the presence of multiple bridges suggests a densely populated area with a well-developed infrastructure for transportation and connectivity. as for the land cover, it appears to be a mix of urban areas, possibly with green spaces like parks or gardens interspersed among the buildings.",
+  "dominant_prediction_ratio": 0.2
+}

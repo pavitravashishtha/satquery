@@ -1,0 +1,14 @@
+{
+  "model_name": "fusion_dual_cnn",
+  "benchmark": "cartosat_risat_proxy",
+  "task": "vqa",
+  "metric": "accuracy (relaxed)",
+  "score": 0.0,
+  "n_samples": 5,
+  "majority_baseline": 0.2,
+  "majority_class": "river and floodplain wetland",
+  "baseline_gap": -0.2,
+  "domain_collapse_detected": false,
+  "dominant_prediction": "combining optical and sar data, the following are present: inland waters (confidence 99.3%).",
+  "dominant_prediction_ratio": 0.4
+}

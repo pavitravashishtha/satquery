@@ -1,0 +1,11 @@
+{
+  "model_name": "qwen2.5-vl-cdvqa",
+  "benchmark": "cdvqa",
+  "task": "change_vqa",
+  "metric": "accuracy (relaxed)",
+  "score": 0.705,
+  "n_samples": 200,
+  "majority_baseline": 0.33,
+  "majority_class": "no",
+  "baseline_gap": 0.375
+}

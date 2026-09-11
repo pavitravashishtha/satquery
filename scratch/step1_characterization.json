@@ -1,0 +1,73 @@
+{
+  "runs_00018": [
+    {
+      "run": 1,
+      "token_length": 31,
+      "bldg_count": 0,
+      "rep_start_char": -1,
+      "rep_start_tok": -1,
+      "answer": "In this satellite image, there are several objects and features visible, including buildings, houses, trees, a road, a bridge, and two football fields.",
+      "confidence": 0.8827
+    },
+    {
+      "run": 2,
+      "token_length": 51,
+      "bldg_count": 0,
+      "rep_start_char": -1,
+      "rep_start_tok": -1,
+      "answer": "In this satellite image, there are two basketball courts, one football field, one building, one road, three bridges, and one building at the top left. There is also a small bridge at the top right and another bridge at the bottom left.",
+      "confidence": 0.7783
+    },
+    {
+      "run": 3,
+      "token_length": 78,
+      "bldg_count": 0,
+      "rep_start_char": -1,
+      "rep_start_tok": -1,
+      "answer": "In this satellite image, there are three bridges, one building, two buildings close to each other at the bottom right, two buildings close to each other at the center, two buildings close to each other at the top left, one building at the bottom left, and two basketball courts. There is also a road at the bottom left and a football field at the top of the image.",
+      "confidence": 0.8552
+    }
+  ],
+  "new_images": [
+    {
+      "image": "data/SECOND/im2/00029.png",
+      "answer": "In this satellite image, there are several objects and features visible, including a basketball court, buildings, trees, a road, a small intersection, and an intersection.",
+      "confidence": 0.8587,
+      "tokens": 33,
+      "max_ngram_rep": 1,
+      "has_loop": false
+    },
+    {
+      "image": "data/SECOND/im2/00031.png",
+      "answer": "In this satellite image, there is one basketball court, one building, two roads, three tennis courts, some trees, a road at the bottom right, a building at the center, and a basketball court at the bottom right.",
+      "confidence": 0.8322,
+      "tokens": 46,
+      "max_ngram_rep": 2,
+      "has_loop": false
+    },
+    {
+      "image": "data/SECOND/im2/00034.png",
+      "answer": "In this satellite image, there are several objects and features visible, including buildings, houses, trees, tennis courts, a basketball court, and roads.",
+      "confidence": 0.8583,
+      "tokens": 30,
+      "max_ngram_rep": 1,
+      "has_loop": false
+    },
+    {
+      "image": "data/SECOND/im2/00038.png",
+      "answer": "In this satellite image, there are two basketball courts, two buildings, some trees, a road, three bridges, and a football field.",
+      "confidence": 0.8338,
+      "tokens": 29,
+      "max_ngram_rep": 1,
+      "has_loop": false
+    },
+    {
+      "image": "data/SECOND/im2/00040.png",
+      "answer": "In this satellite image, there are two basketball courts, some trees, an intersection, a road, and a building. Additionally, there are two small basketball courts close to each other at the bottom of the image.",
+      "confidence": 0.8827,
+      "tokens": 43,
+      "max_ngram_rep": 2,
+      "has_loop": false
+    }
+  ]
+}
