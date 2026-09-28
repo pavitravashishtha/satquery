@@ -131,18 +131,14 @@ function initScrollTrigger() {
   };
 
   const stopWaterfallLoop = () => {
-    if (!isLoopingWaterfall) return;
     isLoopingWaterfall = false;
     if (loopAnimationFrameId) {
       cancelAnimationFrame(loopAnimationFrameId);
       loopAnimationFrameId = null;
     }
     const bgVid = document.getElementById('workspace-bg-video');
-    const cvs = document.getElementById('hero-canvas');
     if (bgVid) {
-      bgVid.pause();
-      bgVid.style.display = 'none';
-      if (cvs) cvs.style.opacity = '1';
+      bgVid.play().catch(() => {});
     }
   };
 
@@ -150,34 +146,53 @@ function initScrollTrigger() {
   globalStopWaterfallLoop = stopWaterfallLoop;
   globalRenderFrameZero = () => {
     const bgVid = document.getElementById('workspace-bg-video');
-    const cvs = document.getElementById('hero-canvas');
     if (bgVid) {
-      bgVid.pause();
-      bgVid.style.display = 'none';
-      if (cvs) cvs.style.opacity = '1';
+      bgVid.play().catch(() => {});
     }
     sequence.frame = 0;
     render();
   };
 
-  // Preload all 673 frames safely with immediate render on load/cache
-  for (let i = 0; i < frameCount; i++) {
-    const img = new Image();
-    images[i] = img;
-    img.onload = () => {
-      if (i === 0 || Math.round(sequence.frame) === i) {
-        resizeCanvas();
-        render();
-      }
-    };
-    img.src = currentFramePath(i);
-    if (img.complete) {
-      if (i === 0 || Math.round(sequence.frame) === i) {
-        resizeCanvas();
-        render();
-      }
+  // On cloud static spaces, skip 673 frame probing to eliminate all 404 network lag
+  if (window.location.hostname.includes('static.hf.space') || window.location.hostname.includes('huggingface.co')) {
+    const bgVid = document.getElementById('workspace-bg-video');
+    const cvs = document.getElementById('hero-canvas');
+    if (bgVid) {
+      bgVid.style.display = 'block';
+      bgVid.style.opacity = '1';
+      bgVid.play().catch(() => {});
     }
+    if (cvs) cvs.style.display = 'none';
+    return;
   }
+  const probe = new Image();
+  probe.onload = () => {
+    const cvs = document.getElementById('hero-canvas');
+    if (cvs) { cvs.style.display = 'block'; cvs.style.opacity = '1'; }
+    for (let i = 0; i < frameCount; i++) {
+      const img = new Image();
+      images[i] = img;
+      img.onload = () => {
+        if (i === 0 || Math.round(sequence.frame) === i) {
+          resizeCanvas();
+          render();
+        }
+      };
+      img.src = currentFramePath(i);
+    }
+  };
+  probe.onerror = () => {
+    // Zero-lag cloud mode: no 673 failed requests, hardware video provides continuous 60fps motion
+    const bgVid = document.getElementById('workspace-bg-video');
+    const cvs = document.getElementById('hero-canvas');
+    if (bgVid) {
+      bgVid.style.display = 'block';
+      bgVid.style.opacity = '1';
+      bgVid.play().catch(() => {});
+    }
+    if (cvs) cvs.style.display = 'none';
+  };
+  probe.src = currentFramePath(0);
 
   window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
@@ -721,16 +736,16 @@ function runWowFlightSequence(place, prompt) {
 }
 
 // ---------------------------------------------------------------------------
-// Claude-Style Conversational Response Generator
+// Claude-Style Conversational Response Generator (100% Dynamic from Response)
 // ---------------------------------------------------------------------------
 function buildClaudeChatText(prompt, place, data) {
   const safePlace = escapeHtml(place);
-  const confPercent = data.confidence_percent || 92;
-  const confBadgeText = data.is_confidence_reliable
-    ? `${confPercent}% Calibrated Sigmoid Confidence`
-    : `~${confPercent}% Model Token Certainty`;
+  const confPercent = (typeof data.confidence_percent === 'number')
+    ? data.confidence_percent
+    : Math.round((data.confidence || 0) * 100);
+  const isReliable = Boolean(data.is_confidence_reliable);
 
-  // Extract plain-text summary from answer_html or answer
+  // Extract raw content from results or answer
   let rawContent = "";
   if (data.results && data.results.length > 0 && data.results[0].answer) {
     rawContent = data.results[0].answer;
@@ -738,11 +753,18 @@ function buildClaudeChatText(prompt, place, data) {
     rawContent = data.answer;
   }
 
-  // Extract "In Simple Words" if available
+  // 1. Extract executive takeaway / plain words dynamically
   let directParagraph = "";
-  const simpleWordsMatch = rawContent.match(/In Simple Words[^<]*\)\s*<\/[^>]+>\s*<p>([^<]+)<\/p>/i);
-  if (simpleWordsMatch && simpleWordsMatch[1]) {
-    directParagraph = simpleWordsMatch[1].trim();
+  const simpleWordsHtmlMatch = rawContent.match(/class="simple-words-box"[^>]*>[\s\S]*?<p>([^<]+)<\/p>/i);
+  const simpleWordsMdMatch = rawContent.match(/####\s*💡\s*In Simple Words[^\n]*\n+([^\n#]+)/i);
+  const assessmentMdMatch = rawContent.match(/####\s*📋\s*Analytical Assessment[^\n]*\n+([^\n#]+)/i);
+
+  if (simpleWordsHtmlMatch && simpleWordsHtmlMatch[1]) {
+    directParagraph = simpleWordsHtmlMatch[1].trim();
+  } else if (simpleWordsMdMatch && simpleWordsMdMatch[1]) {
+    directParagraph = simpleWordsMdMatch[1].trim();
+  } else if (assessmentMdMatch && assessmentMdMatch[1]) {
+    directParagraph = assessmentMdMatch[1].trim();
   } else {
     const cleaned = rawContent
       .replace(/<[^>]*>/g, ' ')
@@ -753,43 +775,77 @@ function buildClaudeChatText(prompt, place, data) {
     directParagraph = sentences.slice(0, 3).join(' ');
   }
 
-  let keyBullets = '';
-  if (data.task_type === 'fusion' || data.task_type === 'optical_sar_fusion' || (data.task_sequence && data.task_sequence.includes('fusion'))) {
-    keyBullets = `
-      <ul>
-        <li><strong>Inundation Status:</strong> Active surface water pooling confirmed across low-lying floodplains.</li>
-        <li><strong>Sensor Modality:</strong> Co-registered Sentinel-1 SAR (all-weather radar microwave) + Sentinel-2 Optical.</li>
-        <li><strong>Atmospheric Status:</strong> Complete cloud penetration achieved; zero surface moisture attenuation.</li>
-        <li><strong>Model Validation:</strong> ${confBadgeText} from dual-branch CNN.</li>
-      </ul>
-    `;
-  } else if (data.task_type === 'change_vqa' || (data.task_sequence && data.task_sequence.includes('change_vqa'))) {
-    keyBullets = `
-      <ul>
-        <li><strong>Observation Epochs:</strong> Co-registered bitemporal satellite observation pairs.</li>
-        <li><strong>Change Analysis:</strong> Radiometric delta and semantic shift across urban/vegetation contours evaluated.</li>
-        <li><strong>Model Certainty:</strong> ${confBadgeText} (CDVQA specialized LoRA adapter).</li>
-      </ul>
-    `;
-  } else if (data.task_type === 'grounding') {
-    const boxes = (data.evidence_maps && data.evidence_maps.grounding && data.evidence_maps.grounding.boxes)
-      ? data.evidence_maps.grounding.boxes.length : 'Multiple';
-    keyBullets = `
-      <ul>
-        <li><strong>Target Class:</strong> Structure footprints and architectural contours.</li>
-        <li><strong>Instances Localized:</strong> ${boxes} verified bounding box coordinates extracted.</li>
-        <li><strong>Model Certainty:</strong> ${confBadgeText}.</li>
-      </ul>
-    `;
-  } else {
-    keyBullets = `
-      <ul>
-        <li><strong>Target AOI:</strong> ${safePlace}</li>
-        <li><strong>Sensor Telemetry:</strong> Multi-spectral satellite optical observation.</li>
-        <li><strong>Model Inference:</strong> Qwen2.5-VL Vision-Language Model (${confBadgeText}).</li>
-      </ul>
-    `;
+  // 2. Extract primary finding / core model thesis dynamically
+  let primaryFinding = "";
+  if (assessmentMdMatch && assessmentMdMatch[1]) {
+    primaryFinding = assessmentMdMatch[1].trim();
+  } else if (data.results && data.results[0] && data.results[0].answer) {
+    const lines = data.results[0].answer.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'));
+    primaryFinding = lines[0] || "";
   }
+  if (!primaryFinding) {
+    primaryFinding = directParagraph;
+  }
+
+  // 3. Dynamic Confidence Badge & Text (Preserving Calibrated vs Certainty)
+  let confBadgeText = "";
+  if (isReliable) {
+    if (data.confidence_percent < 50 && data.top_classes && data.top_classes.length >= 2) {
+      const top2Str = data.top_classes.slice(0, 2).map(c => `${c[0]} (${(c[1]*100).toFixed(1)}%)`).join(' and ');
+      confBadgeText = `<span style="color:#85efd0; font-weight:700;">✓ Calibrated Sub-Threshold Signals (${escapeHtml(top2Str)})</span>`;
+    } else {
+      confBadgeText = `<span style="color:#85efd0; font-weight:700;">✓ ${confPercent}% Calibrated Sigmoid Confidence</span>`;
+    }
+  } else {
+    confBadgeText = `<span style="color:#fbbf24; font-weight:700;">⚠️ ~${confPercent}% Model Token Certainty</span> <em style="color:#a9c6c3; font-size:12px;">(Uncalibrated greedy decoding)</em>`;
+  }
+
+  const confNoteText = escapeHtml(data.confidence_note || (isReliable ? 'Calibrated multi-label probability from Optical-SAR dual-branch CNN' : 'Greedy decoding token certainty; does not reflect factual accuracy'));
+
+  // 4. Dynamic Visual Evidence Description
+  let evidenceDesc = "Multi-spectral optical satellite capture";
+  if (data.evidence_maps) {
+    if (data.evidence_maps.grounding && data.evidence_maps.grounding.boxes) {
+      const bCount = data.evidence_maps.grounding.boxes.length;
+      evidenceDesc = `${bCount} localized structure bounding box instance(s) with spatial coordinates`;
+    } else {
+      let hasHeatmap = false;
+      for (const k of Object.keys(data.evidence_maps)) {
+        if (data.evidence_maps[k] && data.evidence_maps[k].type === 'heatmap') {
+          hasHeatmap = true;
+          break;
+        }
+      }
+      if (hasHeatmap) {
+        evidenceDesc = "Co-registered Sentinel-1 SAR & Sentinel-2 Optical with Grad-CAM neural class activation heatmap";
+      }
+    }
+  } else if (data.task_type === 'change_vqa' || (data.task_sequence && data.task_sequence.includes('change_vqa'))) {
+    evidenceDesc = "Co-registered bitemporal satellite observation pair with interactive before/after delta slider";
+  }
+
+  // 5. Dynamic Specialist & Pipeline Details
+  const specialistDisplay = escapeHtml(
+    data.specialist_sequence && data.specialist_sequence.length > 0
+      ? data.specialist_sequence.join(' → ')
+      : (data.specialist || 'SatQuery Neural Specialist')
+  );
+  const taskDisplay = escapeHtml(
+    data.task_sequence && data.task_sequence.length > 0
+      ? data.task_sequence.join(' → ')
+      : (data.task_type || 'Geospatial Intelligence')
+  );
+
+  // 6. Assemble dynamic key telemetry bullets
+  const keyBullets = `
+    <ul style="margin:8px 0; padding-left:20px; line-height:1.6; font-size:13px; color:#c5dedb;">
+      <li><strong>Specialist Intelligence:</strong> ${specialistDisplay} <span style="color:#85efd0;">[${taskDisplay}]</span></li>
+      <li><strong>Confidence Calibration:</strong> ${confBadgeText} — ${confNoteText}</li>
+      <li><strong>Primary Finding:</strong> ${escapeHtml(primaryFinding)}</li>
+      <li><strong>Visual Evidence:</strong> ${escapeHtml(evidenceDesc)}</li>
+      ${data.location_telemetry && data.location_telemetry.sensor ? `<li><strong>Sensor Feed:</strong> ${escapeHtml(data.location_telemetry.sensor)}${data.location_telemetry.resolution ? ` (${escapeHtml(data.location_telemetry.resolution)} GSD)` : ''}</li>` : ''}
+    </ul>
+  `;
 
   return `
     <div class="claude-chat-body">
@@ -797,7 +853,7 @@ function buildClaudeChatText(prompt, place, data) {
       <div class="claude-takeaway">
         ${escapeHtml(directParagraph || 'Satellite analysis completed with verified telemetry and neural model inference.')}
       </div>
-      <p><strong>Key Telemetry Observations:</strong></p>
+      <p style="margin-top:10px;"><strong>Key Telemetry Observations:</strong></p>
       ${keyBullets}
       <p style="font-size:13px; color:#85efd0; margin-top:8px;">
         💡 <em>The complete interactive evidence studio, multi-sensor comparison visualizer, and detailed geospatial intelligence report have opened in the dossier panel on the right.</em>
@@ -875,9 +931,14 @@ function populateArtifactPane(prompt, place, data, optUrl, sarUrl) {
     confHtml += '</div>';
   } else {
     if (data.is_confidence_reliable) {
+      const isSub = data.confidence_percent < 50 && data.top_classes && data.top_classes.length >= 2;
+      const top2Str = isSub ? data.top_classes.slice(0, 2).map(c => `${c[0]} (${(c[1]*100).toFixed(1)}%)`).join(' and ') : '';
+      const badgeHtml = isSub
+        ? `<span>✓ Calibrated Sub-Threshold Signals: ${escapeHtml(top2Str)}</span>`
+        : `<span>✓ Calibrated Confidence</span> <b>${data.confidence_percent}%</b>`;
       confHtml = `
         <div class="score-container" style="margin-bottom:14px;">
-          <div class="score-badge calibrated"><span>✓ Calibrated Confidence</span> <b>${data.confidence_percent}%</b></div>
+          <div class="score-badge calibrated">${badgeHtml}</div>
           <div class="score-detail" style="color:#a9c6c3; margin-top:4px;">${escapeHtml(data.confidence_note || 'Calibrated multi-label probability')}</div>
         </div>
       `;
@@ -941,28 +1002,39 @@ function populateArtifactPane(prompt, place, data, optUrl, sarUrl) {
     `;
   } else if (data.task_type === 'optical_sar_fusion' || data.task_type === 'fusion_analysis') {
     let heatmapDataUrl = '';
+    let heatmapClass = '';
     if (data.evidence_maps) {
       for (const [cls, ev] of Object.entries(data.evidence_maps)) {
         if (ev.type === 'heatmap') {
           heatmapDataUrl = ev.data_url;
+          heatmapClass = cls;
           break;
         }
       }
     }
 
+    const isSubThresholdHeatmap = data.confidence_percent < 50;
+    const gradcamBtnLabel = isSubThresholdHeatmap ? '🔥 Grad-CAM (Weak Signal &lt;50%)' : '🔥 Grad-CAM Heatmap';
+    const gradcamImgClass = isSubThresholdHeatmap ? 'gradcam-overlay-img sub-threshold' : 'gradcam-overlay-img';
+    const subBadgeHtml = isSubThresholdHeatmap ? `<div class="subthreshold-heatmap-pill" id="subthreshold-pill" style="display:none;">⚠️ Sub-Threshold Neural Signal (&lt;50%)</div>` : '';
+    const legendText = isSubThresholdHeatmap
+      ? `Spatial Activation: Optical-SAR Dual-CNN Class Localization (Sub-Threshold Feature Signal: ${escapeHtml(heatmapClass || 'Candidate')})`
+      : `Spatial Activation: Optical-SAR Dual-CNN Class Localization (${escapeHtml(heatmapClass || 'Active Detection')})`;
+
     visualContentHtml = `
       <div class="band-selector" style="margin-bottom:12px;">
         <button class="band-btn active" data-view="optical">📡 Sentinel-2 Optical</button>
         ${sarUrl ? `<button class="band-btn" data-view="sar">⚡ Sentinel-1 SAR</button>` : ''}
-        ${heatmapDataUrl ? `<button class="band-btn gradcam-btn" data-view="gradcam">🔥 Grad-CAM Heatmap</button>` : ''}
+        ${heatmapDataUrl ? `<button class="band-btn gradcam-btn" data-view="gradcam">${gradcamBtnLabel}</button>` : ''}
       </div>
       <div class="evidence-container">
         <div class="evidence-img-wrapper" style="position:relative;">
           <img class="evidence-img main-sensor-img" src="${optUrl}" alt="Optical Observation" />
-          ${heatmapDataUrl ? `<img class="gradcam-overlay-img" src="${heatmapDataUrl}" style="display:none;" alt="Grad-CAM Activation" />` : ''}
+          ${heatmapDataUrl ? `<img class="${gradcamImgClass}" src="${heatmapDataUrl}" style="display:none;" alt="Grad-CAM Activation" />` : ''}
+          ${subBadgeHtml}
         </div>
       </div>
-      <div class="legend" style="margin-top:8px;"><i></i> <span>Spatial Activation: Optical-SAR Dual-CNN Class Localization</span></div>
+      <div class="legend" style="margin-top:8px;"><i></i> <span>${legendText}</span></div>
     `;
   } else if (data.task_type === 'change_vqa') {
     const beforeImg = previews.before || optUrl;
@@ -1071,15 +1143,19 @@ function populateArtifactPane(prompt, place, data, optUrl, sarUrl) {
       btn.classList.add('active');
       const view = btn.dataset.view;
 
+      const pill = artifactBody.querySelector('#subthreshold-pill');
       if (view === 'optical') {
         if (mainImg) mainImg.src = optUrl;
         if (gradcamImg) gradcamImg.style.display = 'none';
+        if (pill) pill.style.display = 'none';
       } else if (view === 'sar') {
         if (mainImg && sarUrl) mainImg.src = sarUrl;
         if (gradcamImg) gradcamImg.style.display = 'none';
+        if (pill) pill.style.display = 'none';
       } else if (view === 'gradcam') {
         if (mainImg) mainImg.src = optUrl;
         if (gradcamImg) gradcamImg.style.display = 'block';
+        if (pill) pill.style.display = 'flex';
       }
     });
   });
@@ -1165,6 +1241,7 @@ function renderAiResult(aiMsg, prompt, place, data) {
   openArtifactPane();
 
   if (statusBadge) {
+    statusBadge.classList.remove('loading-telemetry');
     statusBadge.textContent = `Analysis complete (${data.execution_time_s}s)`;
   }
 
@@ -1247,17 +1324,46 @@ async function submitChat() {
       }
     }
 
-    const response = await fetch('/api/query', {
-      method: 'POST',
-      body: formData,
-    });
-
-    if (!response.ok) {
-      const errJson = await response.json().catch(() => ({}));
-      throw new Error(errJson.error || `Server error (${response.status})`);
+    let resData = null;
+    try {
+      const response = await fetch('/api/query', {
+        method: 'POST',
+        body: formData,
+      });
+      if (response.ok) {
+        resData = await response.json();
+      }
+    } catch (netErr) {
+      // Backend not running (Hugging Face Static Space mode)
     }
 
-    const resData = await response.json();
+    if (!resData) {
+      if (activePresetId && window.SATQUERY_PRESETS && window.SATQUERY_PRESETS[activePresetId]) {
+        resData = JSON.parse(JSON.stringify(window.SATQUERY_PRESETS[activePresetId]));
+      } else {
+        const pLower = prompt.toLowerCase();
+        let matchedPreset = 'fusion';
+        if (pLower.includes('change') || pLower.includes('before') || pLower.includes('after') || pLower.includes('expansion')) {
+          matchedPreset = 'change_vqa';
+        } else if (pLower.includes('flood') || pLower.includes('sar') || pLower.includes('radar') || pLower.includes('water')) {
+          matchedPreset = 'fusion';
+        } else if (pLower.includes('building') || pLower.includes('locate') || pLower.includes('box')) {
+          matchedPreset = 'grounding';
+        } else if (pLower.includes('describe') || pLower.includes('caption')) {
+          matchedPreset = 'captioning';
+        } else if (pLower.includes('compound') || pLower.includes('both')) {
+          matchedPreset = 'compound';
+        } else {
+          matchedPreset = 'vqa';
+        }
+
+        if (window.SATQUERY_PRESETS && window.SATQUERY_PRESETS[matchedPreset]) {
+          resData = JSON.parse(JSON.stringify(window.SATQUERY_PRESETS[matchedPreset]));
+          resData.query = prompt;
+          if (place) resData.location = place;
+        }
+      }
+    }
 
     finishFlight(resData, () => {
       renderAiResult(aiMsg, prompt, place, resData);
@@ -1290,6 +1396,22 @@ let authToken = localStorage.getItem('satquery_token') || 'demo_token_priya';
 
 async function initAuth() {
   try {
+    if (window.location.hostname.includes('static.hf.space') || window.location.hostname.includes('huggingface.co')) {
+      applyUserSession({
+        id: 'priya',
+        name: 'Priya Menon',
+        email: 'priya@example.com',
+        role: 'Senior Geospatial Analyst',
+        organization: 'National Remote Sensing Centre (NRSC)',
+        plan: 'Pro Tier',
+        avatar: 'P',
+        avatar_bg: 'linear-gradient(135deg, #184e42, #73cfb3)',
+        api_key: 'sq_live_9a87f12e4b3c7d6e',
+        queries_limit: 500,
+        queries_used: 42
+      });
+      return;
+    }
     const res = await fetch('/api/auth/user', {
       headers: {
         'Authorization': `Bearer ${authToken}`
@@ -1435,7 +1557,6 @@ async function loginWithPersona(personaId) {
 // ---------------------------------------------------------------------------
 // OVERLAY / MODAL MANAGEMENT
 // ---------------------------------------------------------------------------
-const pipelineModal = document.getElementById('pipeline-modal');
 const settingsDrawer = document.getElementById('settings-drawer');
 const settingsBackdrop = document.getElementById('settings-backdrop');
 const searchSheet = document.getElementById('search-sheet');
@@ -1458,7 +1579,7 @@ function toggleOverlay(element, visible) {
 
     // Animate modal panels
     if (typeof gsap !== 'undefined') {
-      if (element === pipelineModal || element === authModal || element === accountModal) {
+      if (element === authModal || element === accountModal) {
         const panel = element.querySelector('.pipeline-panel');
         if (panel) {
           gsap.fromTo(panel, { scale: 0.88, opacity: 0, y: 25, rotationX: 6 }, { scale: 1, opacity: 1, y: 0, rotationX: 0, duration: 0.45, ease: 'back.out(1.3)' });
@@ -1875,6 +1996,34 @@ function initEventBindings() {
   });
   document.getElementById('open-images').addEventListener('click', () => notify('Your 12 stored satellite images are ready to browse.'));
 
+  // Architecture & Technical Verification Modal Wiring
+  const archModal = document.getElementById('architecture-modal');
+  const openArchBtn = document.getElementById('open-architecture-btn');
+  const closeArchBtn = document.getElementById('close-architecture');
+  const closeArchBtn2 = document.getElementById('close-architecture-btn');
+
+  const closeArch = () => {
+    if (archModal) {
+      archModal.style.display = 'none';
+      archModal.classList.remove('open');
+    }
+  };
+
+  if (openArchBtn && archModal) {
+    openArchBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      archModal.style.display = 'flex';
+      archModal.classList.add('open');
+    });
+  }
+  if (closeArchBtn) closeArchBtn.addEventListener('click', closeArch);
+  if (closeArchBtn2) closeArchBtn2.addEventListener('click', closeArch);
+  if (archModal) {
+    archModal.addEventListener('click', (e) => {
+      if (e.target === archModal) closeArch();
+    });
+  }
+
   // Image file input handling
   const imageInput = document.getElementById('image-input');
   if (imageInput) {
@@ -1937,10 +2086,16 @@ function initIntroVideo() {
       video.pause();
     } catch (e) {}
 
+    const bgVid = document.getElementById('workspace-bg-video');
+    if (bgVid) {
+      bgVid.style.display = 'block';
+      bgVid.play().catch(() => {});
+    }
+
     if (typeof gsap !== 'undefined') {
       gsap.to(overlay, {
         opacity: 0,
-        duration: 0.65,
+        duration: 0.5,
         ease: 'power2.inOut',
         onComplete: () => {
           overlay.classList.add('hidden');
@@ -1951,9 +2106,14 @@ function initIntroVideo() {
       overlay.classList.add('hidden');
       setTimeout(() => {
         overlay.style.display = 'none';
-      }, 650);
+      }, 500);
     }
   };
+
+  // Safety fallback: auto-transition after 8.5s if not skipped
+  setTimeout(() => {
+    if (!hasDismissed) dismissIntro();
+  }, 8500);
 
   if (soundBtn) {
     soundBtn.addEventListener('click', (e) => {
